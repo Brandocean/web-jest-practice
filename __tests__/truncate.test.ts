@@ -11,3 +11,11 @@ test("recorta el texto largo y agrega puntos suspensivos", () => {
 test("devuelve un string vacío cuando la entrada está vacía", () => {
     expect(truncate("", 10)).toBe("");
 });
+
+test("devuelve el texto sin cambios cuando su longitud es igual a maxLength", () => {
+   expect(truncate("Hola", 4)).toBe("Hola");
+ });
+ 
+ test("recorta el texto cuando su longitud supera maxLength por un carácter", () => {
+   expect(truncate("Hola!", 4)).toBe("Hola...");
+ });
